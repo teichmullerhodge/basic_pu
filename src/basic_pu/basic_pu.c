@@ -46,7 +46,7 @@ run_program (struct BPUInstruction *instructions, struct basic_pu *bpu)
                                 bpu->register_B = value;
                                 break;
                             }
-                        if (_register == BPU_PROC_REGISTER && value >= 0 && value <= 255)
+                        if (_register == BPU_PROC_REGISTER && is_valid_u8 (value))
                             {
                                 bpu->procedure_register = value;
                                 break;
